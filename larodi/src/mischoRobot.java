@@ -9,14 +9,18 @@ public class mischoRobot extends AdvancedRobot {
 		
 		 while (true) {
              ahead(100);
-             turnGunRight(360);
-             back(100);
-             turnGunRight(360);
+             turnGunRight(10);
+             //back(100);
+             turnGunRight(20);
          }
     }
   
      public void onScannedRobot(ScannedRobotEvent e) {
-         fire(1);
+    	 if (event.getDistance() < 100) {
+             fire(3);
+         } else {
+             fire(1);
+         }
      
      }
 	
